@@ -7,27 +7,27 @@ import java.awt.*;
 
 /**
  * Classe de detalhes para o Chocolate. Mostra todas as informações do Chocolate selecionado. Usa a classe
- * {@link view.DetailsPanel} como template.
+ * {@link DetailsPanel} como template.
  * @author Tiago
  * @version 1.0
  */
 public class ChocolateDetails extends DetailsPanel {
 
   /**
-   * Constante que representa a {@link model.Barra}. Usado no método {@link #popularDados}, já que é necessário saber
+   * Constante que representa a {@link Barra}. Usado no método {@link #popularDados}, já que é necessário saber
    * qual o tipo de Chocolate sendo representado(Barra, Trufa ou Chocotone) para mostrar os campos correspondentes às
    * suas propriedades específicas.
    */
   public static final int BARRA = 0;
   /**
-   * Constante que representa o {@link model.Chocotone}. Usado no método {@link #popularDados},
+   * Constante que representa o {@link Chocotone}. Usado no método {@link #popularDados},
    * já que é necessário saber qual o tipo
    * de Chocolate sendo representado(Barra, Trufa ou Chocotone) para mostrar os campos correspondentes às suas
    * propriedades específicas.
    */
   public static final int CHOCOTONE = 1;
   /**
-   * Constante que representa a {@link model.Trufa}. Usado no método {@link #popularDados}, já que é necessário saber
+   * Constante que representa a {@link Trufa}. Usado no método {@link #popularDados}, já que é necessário saber
    * qual o tipo
    * de Chocolate sendo representado(Barra, Trufa ou Chocotone) para mostrar os campos correspondentes às suas
    * propriedades específicas.

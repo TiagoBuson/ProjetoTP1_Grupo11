@@ -4,6 +4,7 @@ import model.Funcionario;
 import model.Pessoa;
 
 import javax.swing.*;
+import java.text.ParseException;
 
 /**
  * Classe de detalhes para o funcionario. Mostra todas as informações do funcionario selecionado.
@@ -17,7 +18,7 @@ public class FuncionarioDetails extends PessoaDetails {
   /**
    * Cria os JLabels e JTextFields dos detalhes dos funcionarios.
    */
-  public FuncionarioDetails() {
+  public FuncionarioDetails() throws ParseException {
     super("Detalhes do funcionário.");
 
     JLabel labelSalario = new JLabel("Salário");

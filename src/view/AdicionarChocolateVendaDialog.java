@@ -1,4 +1,6 @@
 package view;
+
+import controller.AdicionarChocolateVendaDialogController;
 import model.Chocolate;
 
 import javax.swing.*;
@@ -25,6 +27,12 @@ public class AdicionarChocolateVendaDialog extends JDialog {
 
     chocolate = new JComboBox<>();
     submit = new JButton("Salvar");
+
+    AdicionarChocolateVendaDialogController controller =
+            new AdicionarChocolateVendaDialogController(this);
+
+    chocolate.addActionListener(controller);
+    submit.addActionListener(controller);
 
     add(chocolate, BorderLayout.CENTER);
     add(submit, BorderLayout.AFTER_LAST_LINE);

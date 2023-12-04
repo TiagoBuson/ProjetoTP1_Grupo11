@@ -16,6 +16,7 @@ package main;
 import model.*;
 import view.MainFrame;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.HashMap;
 
@@ -29,7 +30,7 @@ public class Main {
    * Função principal do programa: carrega os valores iniciais na loja e inicia a interface.
    * @param args argumentos da linha de comando -- não utilizados.
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) throws ParseException {
 
     carregarInicial();
 

@@ -1,9 +1,12 @@
 package view;
 
+import controller.FuncionariosTabController;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 /**
  * Aba de funcionários. Contém a representação da lista de funcionários cadastrados, além de mostrar os detalhes de
@@ -19,7 +22,7 @@ public class FuncionariosTab extends JPanel {
   /**
    * Cria o painel da lista de funcionarios, usando o template da classe ListaPanel.
    */
-  public FuncionariosTab() {
+  public FuncionariosTab() throws ParseException {
     setLayout(new BorderLayout(0, 0));
 
     listaFuncionarios = new ListaPanel(ListaPanel.FUNCIONARIO);
@@ -28,6 +31,10 @@ public class FuncionariosTab extends JPanel {
     details = new FuncionarioDetails();
     add(details, BorderLayout.CENTER);
 
+    FuncionariosTabController controller = new FuncionariosTabController(this);
+
+    listaFuncionarios.getLista().addListSelectionListener(controller);
+    details.getSubmit().addActionListener(controller);
     listaFuncionarios.getLista().setSelectedIndex(0);
   }
 
@@ -58,5 +65,10 @@ public class FuncionariosTab extends JPanel {
     for (ActionListener l : details.getSubmit().getActionListeners()) {
       details.getSubmit().removeActionListener(l);
     }
+
+    FuncionariosTabController controller = new FuncionariosTabController(this);
+
+    listaFuncionarios.getLista().addListSelectionListener(controller);
+    details.getSubmit().addActionListener(controller);
   }
 }

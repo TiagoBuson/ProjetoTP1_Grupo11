@@ -1,5 +1,6 @@
 package view;
 
+import controller.ChocolateDialogController;
 import model.Loja;
 
 import javax.swing.*;
@@ -26,6 +27,8 @@ public class ChocolateDialog extends JDialog {
     setLayout(new BorderLayout());
     setModalityType(ModalityType.APPLICATION_MODAL);
 
+    ChocolateDialogController controller = new ChocolateDialogController(this);
+
     JPanel topBar = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 0));
 
     String[] opcoes = {"Barra", "Chocotone", "Trufa"};
@@ -40,6 +43,8 @@ public class ChocolateDialog extends JDialog {
     textField.setColumns(5);
     topBar.add(quantidade);
 
+    seletor.addActionListener(controller);
+
     add(topBar, BorderLayout.BEFORE_FIRST_LINE);
 
     details = new ChocolateDetails();
@@ -49,6 +54,8 @@ public class ChocolateDialog extends JDialog {
 
     details.getId().setText(String.valueOf(Loja.getInstance().showProximoIdChocolate()));
     details.getDataCompra().setText(LocalDate.now().toString());
+
+    details.getSubmit().addActionListener(controller);
 
     setMinimumSize(new Dimension(600, 400));
     pack();

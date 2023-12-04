@@ -3,7 +3,7 @@ package model;
 /**
  * Representa um endereço. <br>
  *
- * Essa classe é usada na classe {@link model.Pessoa}.
+ * Essa classe é usada na classe {@link Pessoa}.
  * @author Tiago
  * @version 1.0
  */

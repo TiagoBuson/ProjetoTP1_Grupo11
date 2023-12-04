@@ -4,6 +4,7 @@ import model.Cliente;
 import model.Pessoa;
 
 import javax.swing.*;
+import java.text.ParseException;
 
 /**
  * Classe de detalhes para o cliente. Mostra todas as informações do cliente selecionado.
@@ -17,7 +18,7 @@ public class ClienteDetails extends PessoaDetails {
   /**
    * Cria os JLabels e os JTextFields dos detalhes dos clientes.
    */
-  public ClienteDetails() {
+  public ClienteDetails() throws ParseException {
     super("Detalhes do Cliente.");
 
     JLabel labelCategoria = new JLabel("Categoria:");

@@ -6,7 +6,7 @@ import java.time.LocalDate;
  * Classe que representa uma unidade de Trufa. <br>
  * 
  * Essa classe nunca é instanciada diretamente. Para adicionar um novo chocolate, usamos o método
- * {@link model.Loja#cadastrarTrufa Loja.cadastrarTrufa()}
+ * {@link Loja#cadastrarTrufa Loja.cadastrarTrufa()}
  */
 public class Trufa extends Chocolate {
   private String recheio;

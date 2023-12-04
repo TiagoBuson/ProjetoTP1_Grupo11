@@ -1,9 +1,11 @@
 package view;
 
+import controller.FuncionarioDialogController;
 import model.Loja;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.ParseException;
 
 /**
  * Classe com o dialog de criação de Funcionarios. Usa a classe FuncionarioDetails como base.
@@ -17,7 +19,7 @@ public class FuncionarioDialog extends JDialog {
    * Cria o dialog de criação de funcionarios. Usa a classe FuncionarioDetails como base.
    * @param parent JFrame da classe pai
    */
-  public FuncionarioDialog(JFrame parent) {
+  public FuncionarioDialog(JFrame parent) throws ParseException {
     super(parent, "Funcionário");
     setModalityType(ModalityType.APPLICATION_MODAL);
 
@@ -25,6 +27,8 @@ public class FuncionarioDialog extends JDialog {
     add(details);
 
     details.getId().setText(String.valueOf(Loja.getInstance().showProximoIdFuncionario()));
+
+    details.getSubmit().addActionListener(new FuncionarioDialogController(this));
 
     setMinimumSize(new Dimension(600, 200));
     pack();

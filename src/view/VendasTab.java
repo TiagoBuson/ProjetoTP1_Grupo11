@@ -1,5 +1,7 @@
 package view;
 
+import controller.VendasTabController;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -24,6 +26,11 @@ public class VendasTab extends JPanel {
 
     details = new VendaDetails();
     add(details, BorderLayout.CENTER);
+
+    VendasTabController controller = new VendasTabController(this);
+
+    details.getSubmit().addActionListener(controller);
+    listaVendas.getLista().addListSelectionListener(controller);
     listaVendas.getLista().setSelectedIndex(0);
   }
 
@@ -38,6 +45,10 @@ public class VendasTab extends JPanel {
     for (ActionListener l : details.getSubmit().getActionListeners()) {
       details.getSubmit().removeActionListener(l);
     }
+
+    VendasTabController controller = new VendasTabController(this);
+    details.getSubmit().addActionListener(controller);
+    listaVendas.getLista().addListSelectionListener(controller);
   }
 
   /**

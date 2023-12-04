@@ -1,7 +1,9 @@
 package view;
 
 import main.Main;
-import model.*;
+import model.Cliente;
+import model.Funcionario;
+import model.Loja;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,5 +1,7 @@
 package view;
 
+import controller.MainToolBarController;
+
 import javax.swing.*;
 import java.awt.event.ActionListener;
 
@@ -45,6 +47,13 @@ public class MainToolBar extends JToolBar {
             " e aperte ENTER para limpar o filtro.");
 
     setFloatable(false);
+    ActionListener actionListener = new MainToolBarController(this);
+    adicionarCliente.addActionListener(actionListener);
+    adicionarChocolate.addActionListener(actionListener);
+    adicionarFuncionario.addActionListener(actionListener);
+    adicionarVenda.addActionListener(actionListener);
+    remover.addActionListener(actionListener);
+    pesquisar.addActionListener(actionListener);
   }
 
   /**

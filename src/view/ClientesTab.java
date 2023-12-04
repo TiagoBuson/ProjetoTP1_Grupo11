@@ -1,9 +1,12 @@
 package view;
 
+import controller.ClientesTabController;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 
 /**
  * Aba de Clientes. Contém a representação da lista de Clientes cadastrados, além de mostrar os detalhes do Cliente
@@ -20,7 +23,7 @@ public class ClientesTab extends JPanel {
   /**
    * Cria o painel da lista de clientes, usando o template da classe ListaPanel.
    */
-  public ClientesTab() {
+  public ClientesTab() throws ParseException {
     setLayout(new BorderLayout(0, 0));
 
     listaClientes = new ListaPanel(ListaPanel.CLIENTE);
@@ -28,6 +31,12 @@ public class ClientesTab extends JPanel {
 
     details = new ClienteDetails();
     add(details, BorderLayout.CENTER);
+
+    ClientesTabController controller = new ClientesTabController(this);
+
+    listaClientes.getLista().addListSelectionListener(controller);
+    details.getSubmit().addActionListener(controller);
+    listaClientes.getLista().setSelectedIndex(0);
   }
 
   /**
@@ -57,5 +66,10 @@ public class ClientesTab extends JPanel {
     for (ActionListener l : details.getSubmit().getActionListeners()) {
       details.getSubmit().removeActionListener(l);
     }
+
+    ClientesTabController controller = new ClientesTabController(this);
+
+    details.getSubmit().addActionListener(controller);
+    listaClientes.getLista().addListSelectionListener(controller);
   }
 }

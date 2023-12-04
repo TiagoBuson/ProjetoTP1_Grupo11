@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.ParseException;
 
 /**
  * Tela principal do programa.
@@ -22,7 +23,7 @@ public class MainFrame extends JFrame {
    * Adiciona a MainToolBar e cria o JTabbedPane, com todas as tabs necessarias.
    * @param title String do titulo, varia dependendo de qual objeto é requerido.
    */
-  public MainFrame(String title) {
+  public MainFrame(String title) throws ParseException {
     super(title);
     setDefaultCloseOperation(EXIT_ON_CLOSE);
 

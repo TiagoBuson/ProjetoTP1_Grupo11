@@ -9,7 +9,7 @@ import java.util.Collections;
  * 
  * Essa classe nunca é instanciada diretamente. Para adicionar um novo chocotone, usamos o método
  *
- * {@link model.Loja#cadastrarChocotone Loja.cadastrarTrufa()}
+ * {@link Loja#cadastrarChocotone Loja.cadastrarTrufa()}
  *
  * @author Tiago
  * @version 1.0

@@ -1,8 +1,11 @@
 package view;
+
+import controller.ClienteDialogController;
 import model.Loja;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.ParseException;
 
 /**
  * Classe com o dialog de criação de Clientes. Usa a classe ClienteDetails como base.
@@ -16,7 +19,7 @@ public class ClienteDialog extends JDialog {
    * Cria o dialog de criação de clientes. Usa a classe ClienteDetails como base.
    * @param parent JFrame da classe pai.
    */
-  public ClienteDialog(JFrame parent) {
+  public ClienteDialog(JFrame parent) throws ParseException {
     super(parent, "Cliente");
     setModalityType(ModalityType.APPLICATION_MODAL);
 
@@ -24,6 +27,8 @@ public class ClienteDialog extends JDialog {
     add(details);
 
     details.getId().setText(String.valueOf(Loja.getInstance().showProximoIdCliente()));
+
+    details.getSubmit().addActionListener(new ClienteDialogController(this));
 
     setMinimumSize(new Dimension(600, 200));
     pack();

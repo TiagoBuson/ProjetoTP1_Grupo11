@@ -3,7 +3,7 @@ package model;
 /**
  * Classe que representa um cliente. <br>
  * 
- * Para adicionar um Cliente, use o método {@link model.Loja#cadastrarCliente Loja.cadastrarCLiente()}
+ * Para adicionar um Cliente, use o método {@link Loja#cadastrarCliente Loja.cadastrarCLiente()}
  * 
  * @author Tiago
  * @version 1.0

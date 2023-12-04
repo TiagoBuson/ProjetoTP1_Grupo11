@@ -9,7 +9,7 @@ import java.util.Collections;
  *
  * Essa classe nunca é instanciada diretamente. Para adicionar uma nova Barra, usamos
  * o método
- * {@link model.Loja#cadastrarBarra Loja.cadastrarBarra()}
+ * {@link Loja#cadastrarBarra Loja.cadastrarBarra()}
  *
  * @author Tiago
  * @version 1.0

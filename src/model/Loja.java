@@ -1,7 +1,9 @@
 package model;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * Classe que representa a Loja. Guarda e configura os clientes, funcionarios, vendas e estoque. <br>
@@ -197,7 +199,7 @@ public class Loja {
   /**
    * Retorna o proximo id do cliente. <br>
    *
-   * Usado para mostrar qual seria o Id do próximo cliente
+   * Usado para mostrar qual seria o Id do próximo cliente em {@link controller.ClienteDialogController}.
    * @return Id do cliente + 1.
    */
   public int showProximoIdCliente() {
@@ -218,7 +220,7 @@ public class Loja {
   /**
    * Retorna o proximo id do funcionario.
    *
-   * Usado para mostrar qual seria o Id do próximo funcionário
+   * Usado para mostrar qual seria o Id do próximo funcionário em {@link controller.FuncionarioDialogController}.
    * @return Id do funcionario + 1.
    */
   public int showProximoIdFuncionario() {
@@ -256,7 +258,7 @@ public class Loja {
   /**
    * Realiza uma venda, retirando a quantidade de chocolates vendidos do estoque. <br>
    *
-   * Como o método {@link model.Estoque#removerChocolate(Chocolate)} checa se a quantidade poder ser removida, esse
+   * Como o método {@link Estoque#removerChocolate(Chocolate)} checa se a quantidade poder ser removida, esse
    * método trata dessa exceção. Mesmo assim, os Spinners que controlam a quantidade de produtos a serem adicionados
    * a uma venda só conseguem ir até a quantidade em estoque do chocolate, então essa medida é redundante.
    *

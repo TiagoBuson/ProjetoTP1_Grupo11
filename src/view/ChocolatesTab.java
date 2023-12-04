@@ -1,5 +1,7 @@
 package view;
 
+import controller.ChocolatesTabController;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionListener;
 import java.awt.*;
@@ -25,6 +27,11 @@ public class ChocolatesTab extends JPanel {
 
     details = new ChocolateDetails();
     add(details, BorderLayout.CENTER);
+
+    ChocolatesTabController controller = new ChocolatesTabController(this);
+
+    listaChocolates.getLista().addListSelectionListener(controller);
+    details.getSubmit().addActionListener(controller);
 
     listaChocolates.getLista().setSelectedIndex(0);
   }
@@ -56,5 +63,10 @@ public class ChocolatesTab extends JPanel {
     for (ActionListener l : details.getSubmit().getActionListeners()) {
       details.getSubmit().removeActionListener(l);
     }
+
+    ChocolatesTabController controller = new ChocolatesTabController(this);
+
+    listaChocolates.getLista().addListSelectionListener(controller);
+    details.getSubmit().addActionListener(controller);
   }
 }

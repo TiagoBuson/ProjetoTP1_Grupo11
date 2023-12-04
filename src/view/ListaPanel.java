@@ -1,6 +1,7 @@
 package view;
 
-import model.*;
+import model.Chocolate;
+import model.Loja;
 
 import javax.swing.*;
 import java.awt.*;

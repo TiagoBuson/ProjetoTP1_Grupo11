@@ -4,7 +4,7 @@ package model;
  * Classe que representa um funcionario. <br>
  *
  * Essa classe nunca é instanciada diretamente. Para adicionar um Funcionário, usamos o método
- * {@link model.Loja#cadastrarFuncionario Loja.cadastrarFuncionário()}.
+ * {@link Loja#cadastrarFuncionario Loja.cadastrarFuncionário()}.
  *
  * @author Tiago
  * @version 1.0
