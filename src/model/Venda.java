@@ -19,8 +19,8 @@ public class Venda {
   private Funcionario funcionario;
   private HashMap<Chocolate, Integer> chocolateVendidos;
 
-  /** Constrói uma nova Venda. A classe nunca é instanciada diretamente, sempre pelo método {@link model.Loja#fazerVenda},
-   * ja que ele trata de remover a quantidade vendida do {@link model.Estoque}.
+  /** Constrói uma nova Venda. A classe nunca é instanciada diretamente, sempre pelo método {@link Loja#fazerVenda},
+   * ja que ele trata de remover a quantidade vendida do {@link Estoque}.
    *
    * @param id representa o id da venda.
    * @param cliente representa o cliente que fez a venda.
@@ -65,6 +65,14 @@ public class Venda {
 
     for (Chocolate chocolate : chocolateVendidos.keySet()) {
       valorVenda += chocolate.getPrecoVenda() * chocolateVendidos.get(chocolate);
+    }
+
+    switch (cliente.getCategoria()) {
+      case "Silver" -> valorVenda = valorVenda * 0.9;
+      case "Gold" -> valorVenda = valorVenda * 0.85;
+      case "Platinum" -> valorVenda = valorVenda * 0.75;
+      default -> {
+      }
     }
 
     valor = valorVenda;
