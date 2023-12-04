@@ -6,7 +6,7 @@ package model;
  * Essa classe nunca é instanciada diretamente. Para adicionar um Funcionário, usamos o método
  * {@link Loja#cadastrarFuncionario Loja.cadastrarFuncionário()}.
  *
- * @author Tiago
+ * @author Tiago e Samuel
  * @version 1.0
  */
 public class Funcionario extends Pessoa {

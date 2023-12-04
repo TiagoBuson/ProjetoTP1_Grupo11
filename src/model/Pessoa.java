@@ -2,7 +2,7 @@ package model;
 
 /**
  * Classe abstrata que representa uma pessoa, é a classe base de {@link model.Cliente} e {@link model.Funcionario}.
- * @author Tiago
+ * @author Tiago e Samuel
  * @version 1.0
  */
 public abstract class Pessoa {

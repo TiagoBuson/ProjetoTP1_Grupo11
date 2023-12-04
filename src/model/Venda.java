@@ -8,7 +8,7 @@ import java.util.HashMap;
  *
  * Essa classe armazena todas as informações de uma venda: Cliente, Funcionário, Chocolates vendidos, data e valor.
  * O id da venda é gerado automaticamente.
- * @author Tiago
+ * @author Tiago e Marina
  * @version 1.0
  */
 public class Venda {

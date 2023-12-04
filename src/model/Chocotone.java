@@ -11,7 +11,7 @@ import java.util.Collections;
  *
  * {@link Loja#cadastrarChocotone Loja.cadastrarTrufa()}
  *
- * @author Tiago
+ * @author Tiago e Marina
  * @version 1.0
  */
 public class Chocotone extends Chocolate {

@@ -11,7 +11,7 @@ import java.util.Collections;
  * o método
  * {@link Loja#cadastrarBarra Loja.cadastrarBarra()}
  *
- * @author Tiago
+ * @author Tiago e Marina
  * @version 1.0
  */
 public class Barra extends Chocolate {

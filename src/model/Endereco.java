@@ -4,7 +4,7 @@ package model;
  * Representa um endereço. <br>
  *
  * Essa classe é usada na classe {@link Pessoa}.
- * @author Tiago
+ * @author Marina
  * @version 1.0
  */
 public class Endereco {
