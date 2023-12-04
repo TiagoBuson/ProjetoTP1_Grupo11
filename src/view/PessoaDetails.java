@@ -3,7 +3,9 @@ package view;
 import model.Pessoa;
 
 import javax.swing.*;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
+import java.text.ParseException;
 
 /**
  * Classe abstrata de template para os Labels e TextFields dos clientes e funcionarios.
@@ -26,7 +28,7 @@ public abstract class PessoaDetails extends DetailsPanel {
    * Cria e adiciona os JLabels e os JTextFields base da classe Pessoa.
    * @param titulo String do titulo, varia dependendo de qual objeto é requerido.
    */
-  protected PessoaDetails(String titulo) {
+  protected PessoaDetails(String titulo) throws ParseException {
     super(titulo);
 
     JLabel labelId = new JLabel("Id:");
@@ -40,18 +42,23 @@ public abstract class PessoaDetails extends DetailsPanel {
     JLabel labelNumero = new JLabel("Numero:");
     JLabel labelCep = new JLabel("Cep:");
 
+    MaskFormatter telefoneFormatter = new MaskFormatter("'(##')' #####'-####");
+    MaskFormatter cepFormatter = new MaskFormatter("#####-###");
+    MaskFormatter cpfFormatter = new MaskFormatter("###.###.###-##");
+    MaskFormatter idadeFormatter = new MaskFormatter("###");
     id = new JTextField();
     id.setEditable(false);
-    idade = new JTextField();
+    idade = new JFormattedTextField(idadeFormatter);
     idade.setToolTipText("Inteiro.");
     nome = new JTextField();
-    cpf = new JTextField();
-    telefone = new JTextField();
+    cpf = new JFormattedTextField(cpfFormatter);
+    telefone = new JFormattedTextField(telefoneFormatter);
     email = new JTextField();
     bairro = new JTextField();
     rua = new JTextField();
     numero = new JTextField();
-    cep = new JTextField();
+    cep = new JFormattedTextField(cepFormatter);
+
 
     GridBagConstraints left = getLeft();
     GridBagConstraints right = getRight();
